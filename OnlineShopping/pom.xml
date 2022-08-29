@@ -14,6 +14,14 @@
 
 	<dependencies>
 
+
+		<!-- Link Shopping backend project -->
+		<dependency>
+			<groupId>net.chrisnet</groupId>
+			<artifactId>ShoppingBackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<!-- Java EE API -->
 		<dependency>
 			<groupId>javax</groupId>
@@ -21,15 +29,15 @@
 			<version>${javaee.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- spring-webmvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		 
-				<!-- JSTL -->
+
+		<!-- JSTL -->
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>

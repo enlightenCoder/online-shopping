@@ -12,25 +12,26 @@
 <html lang="en">
 
 <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="">
-		<meta name="author" content="">
-		
-		<script>
-			window.menu = '${title}';
-		</script>
-		
-		<title>Online Shopping -${title}</title>
-		
-		<!-- Bootstrap core CSS -->
-		<link href="${css}/bootstrap.css" rel="stylesheet">
-		<!-- Add custom CSS here -->
-		<link href="${css}/shop-homepage.css" rel="stylesheet">
-		<!-- Add custom CSS here -->
-		<link href="${css}/myapp.css" rel="stylesheet">
-		<!-- Boostrap Yeti Theme -->
-		<!-- <link href="${css}/bootstrap-yeti-theme.css" rel="stylesheet">  -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<script>
+	window.menu = '${title}';
+	console.log(window.menu);
+</script>
+
+<title>Online Shopping -${title}</title>
+
+<!-- Bootstrap core CSS -->
+<link href="${css}/bootstrap.css" rel="stylesheet">
+<!-- Add custom CSS here -->
+<link href="${css}/shop-homepage.css" rel="stylesheet">
+<!-- Add custom CSS here -->
+<link href="${css}/myapp.css" rel="stylesheet">
+<!-- Boostrap Yeti Theme -->
+<!-- <link href="${css}/bootstrap-yeti-theme.css" rel="stylesheet">  -->
 
 </head>
 
@@ -40,13 +41,12 @@
 		<%@include file="./shared/navbar.jsp"%>"
 
 		<!-- Page Content -->
-		<!-- home.jsp -->
 		<div class="content">
+
+			<!-- Load when user click or navigate to home.jsp -->
 			<c:if test="${userClickHome == true }">
 				<%@include file="home.jsp"%>
 			</c:if>
-
-
 
 			<!-- Load only when user click on about  -->
 			<c:if test="${userClickAbout == true }">
@@ -57,10 +57,13 @@
 			<c:if test="${userClickContact == true }">
 				<%@include file="contact.jsp"%>
 			</c:if>
+			
+			<!-- Load only when user click on view all products OR --> <!-- Load only when user click on view on a category  -->
+			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
+				<%@include file="listProducts.jsp"%>
+			</c:if>
+
 		</div>
-
-
-
 
 
 		<!-- footer -->
